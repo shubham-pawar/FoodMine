@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FoodService } from '../services/food/food.service';
-import { NgFor } from '@angular/common';
+
 import { CommonModule } from '@angular/common';
 import { Food } from '../shared/models/Food';
 import { ActivatedRoute } from '@angular/router';
@@ -11,7 +11,7 @@ import { NotFoundComponent } from "../not-found/not-found.component";
 
 @Component({
     selector: 'app-home',
-    imports: [NgFor, CommonModule, SearchComponent, TagsComponent, RouterLink, NotFoundComponent],
+    imports: [CommonModule, SearchComponent, TagsComponent, RouterLink, NotFoundComponent],
     templateUrl: './home.component.html',
     styleUrl: './home.component.css'
 })

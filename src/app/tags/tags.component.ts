@@ -1,12 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Tag } from '../shared/models/Tag';
-import { CommonModule } from '@angular/common';
+
 import { FoodService } from '../services/food/food.service';
 import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-tags',
-    imports: [CommonModule, RouterLink],
+    imports: [RouterLink],
     templateUrl: './tags.component.html',
     styleUrl: './tags.component.css'
 })

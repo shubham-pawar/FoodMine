@@ -1,45 +1,42 @@
 <app-not-found [visible]="!food" notFoundMessage="Product Not Found!"
 resetLinkText="Back To Homepage"></app-not-found>
 
-<div *ngIf="food" class="container">
+@if (food) {
+  <div class="container">
     <img [src]="food.imageUrl" [alt]="food.name">
-
     <div class="details">
-        <div class="header">
-            <span class="name">
-                {{food.name}}
-            </span>
-            <span class="favorite {{food.favorite?'':'not'}}">
-                🤍
-            </span>
-        </div>
-
-        <div class="rating">
-            {{food.stars}}
-        </div>
-
-        <div class="origins">
-            <span *ngFor="let origin of food.origins">
-                {{origin}}
-            </span>
-        </div>
-
-        <div class="tags">
-            <app-tags [foodPageTags]="food.tags" JustifyContent="start"></app-tags>
-        </div>
-
-        <div class="cook-time">
-            <span>
-                Time to cook about <strong>{{food.cookTime}}</strong> minutes
-            </span>
-        </div>
-
-        <div class="price">
-            <span>{{food.price|currency}}</span>
-        </div>
-
-        <button (click)="addToCart()">
-            Add to cart
-        </button>
+      <div class="header">
+        <span class="name">
+          {{food.name}}
+        </span>
+        <span class="favorite {{food.favorite?'':'not'}}">
+          🤍
+        </span>
+      </div>
+      <div class="rating">
+        {{food.stars}}
+      </div>
+      <div class="origins">
+        @for (origin of food.origins; track origin) {
+          <span>
+            {{origin}}
+          </span>
+        }
+      </div>
+      <div class="tags">
+        <app-tags [foodPageTags]="food.tags" JustifyContent="start"></app-tags>
+      </div>
+      <div class="cook-time">
+        <span>
+          Time to cook about <strong>{{food.cookTime}}</strong> minutes
+        </span>
+      </div>
+      <div class="price">
+        <span>{{food.price|currency}}</span>
+      </div>
+      <button (click)="addToCart()">
+        Add to cart
+      </button>
     </div>
-</div>
+  </div>
+}

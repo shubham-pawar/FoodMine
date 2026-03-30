@@ -1,4 +1,6 @@
-<div *ngIf="visible">
+@if (visible) {
+  <div>
     {{notFoundMessage}}
     <a routerLink="{{resetLinkRoute}}">{{resetLinkText}}</a>
-</div>    
+  </div>
+}

@@ -1,11 +1,19 @@
-<div *ngIf="tags" [style.justifyContent] = "JustifyContent">
-    <a *ngFor="let tag of tags" routerLink="/tag/{{tag.name}}">
+@if (tags) {
+  <div [style.justifyContent] = "JustifyContent">
+    @for (tag of tags; track tag) {
+      <a routerLink="/tag/{{tag.name}}">
         {{tag.name}}({{tag.count}})
-    </a>
-</div>
+      </a>
+    }
+  </div>
+}
 
-<div *ngIf="foodPageTags" [style.justifyContent] = "JustifyContent">
-    <a *ngFor="let tagName of foodPageTags" routerLink="/tag/{{tagName}}">
+@if (foodPageTags) {
+  <div [style.justifyContent] = "JustifyContent">
+    @for (tagName of foodPageTags; track tagName) {
+      <a routerLink="/tag/{{tagName}}">
         {{tagName}}
-    </a>
-</div>
+      </a>
+    }
+  </div>
+}
