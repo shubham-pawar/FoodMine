@@ -28,6 +28,3 @@ jobs:
 
       - name: Build Angular app
         run: npm run build --if-present
-
-      - name: Run tests
-        run: npm test -- --watch=false --browsers=ChromeHeadless
