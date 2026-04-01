@@ -26,8 +26,6 @@ We welcome contributions! Please feel free to fork the repository and submit a p
 ## License
 This project is licensed under the [Apache License 2.0](LICENSE).
 
-Enjoy exploring and happy eating! 🍕🥗🍰
-
 ## Enjoy exploring and happy eating! 🍕🥗🍰
 
 ### Home Page
