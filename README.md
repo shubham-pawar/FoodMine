@@ -26,6 +26,9 @@ We welcome contributions! Please feel free to fork the repository and submit a p
 ## License
 This project is licensed under the [Apache License 2.0](LICENSE).
 
+## Code of Conduct
+Please read our [Code of Conduct](CODE_OF_CONDUCT.md) to understand our standards for contributing to this project.
+
 ## Enjoy exploring and happy eating! 🍕🥗🍰
 
 ### Home Page
