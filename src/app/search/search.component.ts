@@ -1,28 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-    selector: 'app-search',
-    imports: [FormsModule],
-    templateUrl: './search.component.html',
-    styleUrl: './search.component.css'
+  selector: 'app-search',
+  imports: [FormsModule],
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.css']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
 
-  searchTerm: string = "";
-  constructor (private route:ActivatedRoute, private router:Router){}
+  route = inject(ActivatedRoute);
+  router = inject(Router);
 
-  ngOnInit(): void{
+  searchTerm = "";
+
+  constructor() {
     this.route.params.subscribe(params => {
-      if(params['searchTerm'])
-      this.searchTerm = params['searchTerm'];
-    })
+      if (params['searchTerm'])
+        this.searchTerm = params['searchTerm'];
+    });
   }
-    
-  search():void{
-    if(this.searchTerm)
+
+  search(): void {
+    if (this.searchTerm)
       this.router.navigateByUrl('/search/' + this.searchTerm);
   }
-
 }
