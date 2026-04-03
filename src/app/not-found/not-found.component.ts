@@ -1,23 +1,16 @@
-import { Component, Input, OnInit } from '@angular/core';
-
+import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
-    selector: 'app-not-found',
-    imports: [RouterModule],
-    templateUrl: './not-found.component.html',
-    styleUrl: './not-found.component.css'
+  selector: 'app-not-found',
+  imports: [RouterModule],
+  templateUrl: './not-found.component.html',
+  styleUrls: ['./not-found.component.css']
 })
-export class NotFoundComponent implements OnInit {
+export class NotFoundComponent {
 
-  @Input() visible:boolean = false;
-  @Input() notFoundMessage: string = "Nothing found!";
-  @Input() resetLinkText: string = "Reset";
-  @Input() resetLinkRoute: string = "/";
-
-  constructor(){}
-
-  ngOnInit(): void {
-    
-  }
+  @Input() visible = false;
+  @Input() notFoundMessage = "Nothing found!";
+  @Input() resetLinkText = "Reset";
+  @Input() resetLinkRoute = "/";
 }

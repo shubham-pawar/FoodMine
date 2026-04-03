@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Cart } from '../shared/models/Cart';
 import { CartService } from '../services/cart/cart.service';
 import { CartItem } from '../shared/models/CartItem';
@@ -7,34 +7,31 @@ import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from "../not-found/not-found.component";
 
 @Component({
-    selector: 'app-cart-page',
-    imports: [CommonModule, RouterModule, NotFoundComponent],
-    templateUrl: './cart-page.component.html',
-    styleUrl: './cart-page.component.css'
+  selector: 'app-cart-page',
+  imports: [CommonModule, RouterModule, NotFoundComponent],
+  templateUrl: './cart-page.component.html',
+  styleUrls: ['./cart-page.component.css']
 })
-export class CartPageComponent implements OnInit{
+export class CartPageComponent implements OnInit {
+  cartService = inject(CartService);
+  cart!: Cart;
 
-  cart!:Cart;
-  constructor(private cartService: CartService) { 
+  ngOnInit(): void {
     this.setCart();
   }
 
-  ngOnInit(): void {
-    
-  }
-
-  removeFromCart(cartItem:CartItem){
+  removeFromCart(cartItem: CartItem) {
     this.cartService.removeFromCart(cartItem.food.id);
     this.setCart();
   }
 
-  changeQuantity(cartItem:CartItem, quantityInString:string){
-    const quantity = parseInt(quantityInString);
+  changeQuantity(cartItem: CartItem, quantityInString: string) {
+    const quantity = parseInt(quantityInString, 10);
     this.cartService.changeQuantity(cartItem.food.id, quantity);
     this.setCart();
   }
 
-  setCart(){
+  setCart() {
     this.cart = this.cartService.getCart();
   }
 }

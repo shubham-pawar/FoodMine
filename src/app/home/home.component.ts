@@ -1,34 +1,33 @@
-import { Component, OnInit } from '@angular/core';
-import { FoodService } from '../services/food/food.service';
-
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink, ActivatedRoute } from '@angular/router';
+import { FoodService } from '../services/food/food.service';
 import { Food } from '../shared/models/Food';
-import { ActivatedRoute } from '@angular/router';
 import { SearchComponent } from '../search/search.component';
 import { TagsComponent } from "../tags/tags.component";
-import { RouterLink } from '@angular/router';
 import { NotFoundComponent } from "../not-found/not-found.component";
 
 @Component({
-    selector: 'app-home',
-    imports: [CommonModule, SearchComponent, TagsComponent, RouterLink, NotFoundComponent],
-    templateUrl: './home.component.html',
-    styleUrl: './home.component.css'
+  selector: 'app-home',
+  imports: [CommonModule, SearchComponent, TagsComponent, RouterLink, NotFoundComponent],
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent {
+
+  foodService = inject(FoodService);
+  route = inject(ActivatedRoute);
 
   foods: Food[] = [];
-  constructor(private foodService:FoodService, private route:ActivatedRoute) { }
 
-  ngOnInit(): void {
+  constructor() {
     this.route.params.subscribe(params => {
       if (params['searchTerm'])
-        this.foods = this.foodService.getAllFoodsBySearchTerm(params['SearchTerm']);
-      else if(params['tag'])
+        this.foods = this.foodService.getAllFoodsBySearchTerm(params['searchTerm']);
+      else if (params['tag'])
         this.foods = this.foodService.getAllFoodsByTag(params['tag']);
       else
-      this.foods = this.foodService.getAll();
-    })
+        this.foods = this.foodService.getAll();
+    });
   }
-  
 }
