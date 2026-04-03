@@ -1,10 +1,8 @@
 ## Welcome to the FoodMine! 🍽️
 
-> 🚀 A modern Angular food ordering UI with powerful search, an intuitive cart, and a fully responsive design.
+> 🚀 A modern Angular food discovery UI with powerful search, rich visuals, and a fully responsive design.
 
-FoodMine is a dynamic web application designed to enhance your culinary experience. It allows users to explore a wide variety of delicious foods, quickly find their favorites with an intuitive search feature, and manage a shopping cart for a seamless ordering experience.
-
-
+FoodMine is a dynamic web application designed to enhance your culinary experience. It allows users to explore a wide variety of delicious foods, quickly find their favorites with an intuitive search feature, and view detailed information about each dish through an engaging, image-driven interface.
 
 <!-- Badges -->
 <!-- Project Info -->
@@ -24,11 +22,12 @@ FoodMine is a dynamic web application designed to enhance your culinary experien
 
 ---
 
-## Features
+## Key Features
 - 🔍 **Smart Search** – Instantly find food items  
-- 🛒 **Shopping Cart** – Add, remove, and manage orders  
-- 🖼️ **Rich UI** – Clean, responsive, and image-driven design  
-- ⚡ **Performance Focused** – Built using Angular 21 best practices
+- 🖼️ Image-Driven UI – Visually explore dishes with rich food photography  
+- 📄 Food Details View – See ingredients, descriptions, and more  
+- ⚡ Performance Focused – Built using Angular 21 best practices  
+- 📱 Fully Responsive – Optimized for mobile, tablet, and desktop
 
 ---
 
