@@ -112,13 +112,17 @@ Then, open a Pull Request.
 
 ---
 
-## License
-This project is licensed under the [Apache License 2.0](LICENSE).
+## 🔒 Security
+Please review our [Security Policy](./SECURITY.md) for reporting vulnerabilities.
 
 ---
 
 ## Code of Conduct
 Please read our [Code of Conduct](CODE_OF_CONDUCT.md) to understand our standards for contributing to this project.
+
+---
+## License
+This project is licensed under the [Apache License 2.0](LICENSE).
 
 ---
 
