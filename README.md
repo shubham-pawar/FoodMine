@@ -1,5 +1,9 @@
 ## Welcome to the FoodMine! 🍽️
 
+<p align="center">
+  <img src="public/assets/images/banner/FoodMine.png" alt="FoodMine" />
+</p>
+
 > 🚀 A modern Angular food discovery UI with powerful search, rich visuals, and a fully responsive design.
 
 FoodMine is a dynamic web application designed to enhance your culinary experience. It allows users to explore a wide variety of delicious foods, quickly find their favorites with an intuitive search feature, and view detailed information about each dish through an engaging, image-driven interface.
